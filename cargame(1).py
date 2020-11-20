@@ -22,15 +22,16 @@ image_lawn = pygame.image.load('images/lawn.jpg')
 image_lawn = pygame.transform.scale(image_lawn, (96, 700))
 image_coin = pygame.image.load('images/oil1.png')
 image_coin = pygame.transform.scale(image_coin, (30, 30))
-image_coin_counter = pygame.image.load('images/coin_counter.png')
-image_coin_counter = pygame.transform.scale(image_coin_counter, (60, 40))
 
 road_speed = 0
 place = [112, 176, 240, 304, 368]
+"""lateral_left_line = 
+lateral_right_line = """
 
 
 class Car:
     def __init__(self, x, y):
+        print(x, '-------------')
         self.x = x
         self.y = y
 
@@ -50,10 +51,6 @@ class Score:
 def crash():
     python = sys.executable
     os.execl(python, python, * sys.argv)
-
-
-def coin_counter():
-    screen.blit(image_coin_counter, (20, 20))
 
 
 blocks = []
@@ -116,22 +113,24 @@ while not done:
 
         for i in num_of_coin:
             score = Score(place[i], 0)
-            scores.append(score)
+            scores.append(score)  
 
-    car_rect = pygame.Rect((car.x, car.y, 40, 80))
     for block in blocks:
         screen.blit(image_obstacle, (block.x, block.y))
         block.y += block_speed
         if block.y > 700:
             blocks.remove(block)
             num_of_obstacles = []
-
-        block_rect = pygame.Rect((block.x, block.y, 40, 80))
-        if car_rect.colliderect(block_rect):
+        
+        if (block.x < car.x < block.x + 40 and block.y < car.y < block.y + 80) or ((car.x + 40 > block.x and car.x+40 <
+                                                                                    block.x + 40) and block.y < car.y <
+                                                                                   block.y + 80):
             print("CRASH")
             print(block.x, car.x, block.y, car.y)
-            done = True
-
+            road_speed = 0
+            block_speed = 0
+            crash()
+    
     for score in scores:
         screen.blit(image_coin, (score.x, score.y))
         score.y += block_speed
@@ -139,14 +138,19 @@ while not done:
             scores.remove(score)
             a = []
 
-        score_rect = pygame.Rect((score.x, score.y, 30, 30))
-        if car_rect.colliderect(score_rect):
-            print("\n++money!!!!!\n")
+        if ((score.x <= car.x <= score.x + 30) and (car.y <= car.y <= score.y + 30)) or ((score.x <= car.x + 40 <=
+                                                                                          score.x + 30) and score.y <
+                                                                                         car.y <= score.y + 30):
+            #print("\n++money!!!!!\n")
             money += 1
             scores.remove(score)
+    """if (0 < car.x < 98) or (700 > car.x + 40 > 418):
+        print("CRASH")
+        road_speed = 0
+        crash()"""
 
     road_speed += 4
-    coin_counter()
+
     pygame.display.flip()
     clock.tick(40)
 print(money)

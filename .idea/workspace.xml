@@ -39,15 +39,15 @@
       <method v="2" />
     </configuration>
     <configuration name="cargame" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="1" />
+      <module name="pygame-project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\Malika\Documents\Python37\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cargame.py" />
@@ -89,21 +89,21 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="420" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1605880489577" />
-    <state width="1242" height="47" key="GridCell.Tab.0.bottom" timestamp="1605890641616">
+    <state width="1242" height="59" key="GridCell.Tab.0.bottom" timestamp="1605892037246">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1242" height="47" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605890641616" />
-    <state width="1242" height="47" key="GridCell.Tab.0.center" timestamp="1605890641616">
+    <state width="1242" height="59" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605892037246" />
+    <state width="1242" height="59" key="GridCell.Tab.0.center" timestamp="1605892037246">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1242" height="47" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605890641616" />
-    <state width="1242" height="47" key="GridCell.Tab.0.left" timestamp="1605890641616">
+    <state width="1242" height="59" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605892037246" />
+    <state width="1242" height="59" key="GridCell.Tab.0.left" timestamp="1605892037246">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1242" height="47" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605890641616" />
-    <state width="1242" height="47" key="GridCell.Tab.0.right" timestamp="1605890641616">
+    <state width="1242" height="59" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605892037246" />
+    <state width="1242" height="59" key="GridCell.Tab.0.right" timestamp="1605892037246">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1242" height="47" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605890641616" />
+    <state width="1242" height="59" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605892037246" />
   </component>
 </project>

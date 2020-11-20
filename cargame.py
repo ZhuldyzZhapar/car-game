@@ -108,6 +108,8 @@ while not done:
             score = Score(place[i], 0)
             scores.append(score)  
 
+
+    car_rect = pygame.Rect((car.x, car.y, 40,80))
     for block in blocks:
         screen.blit(image_obstacle, (block.x, block.y))
         block.y += block_speed
@@ -115,14 +117,11 @@ while not done:
             blocks.remove(block)
             num_of_obstacles = []
         
-        if (block.x < car.x < block.x + 40 and block.y < car.y < block.y + 80) or ((car.x + 40 > block.x and car.x+40 <
-                                                                                    block.x + 40) and block.y < car.y <
-                                                                                   block.y + 80):
+        block_rect = pygame.Rect((block.x, block.y, 40, 80))
+        if car_rect.colliderect(block_rect):
             print("CRASH")
             print(block.x, car.x, block.y, car.y)
-            road_speed = 0
-            block_speed = 0
-            crash()
+            done = True
     
     for score in scores:
         screen.blit(image_coin, (score.x, score.y))
@@ -131,16 +130,14 @@ while not done:
             scores.remove(score)
             a = []
 
-        if ((score.x <= car.x <= score.x + 30) and (car.y <= car.y <= score.y + 30)) or ((score.x <= car.x + 40 <=
-                                                                                          score.x + 30) and score.y <
-                                                                                         car.y <= score.y + 30):
+        score_rect = pygame.Rect((score.x, score.y, 30, 30))
+        if car_rect.colliderect(score_rect):             
             print("\n++money!!!!!\n")
             money += 1
             scores.remove(score)
     if (0 < car.x < 98) or (700 < car.x + 40 > 418):
         print("CRASH")
-        road_speed = 0
-        crash()
+        done = True
 
     road_speed += 4
 
